@@ -5,6 +5,8 @@ A __dynamb-filter__ facilitates the filtering of dynamic ambient (__dynamb__) Io
 
 __dynamb-filter__ is a lightweight [Node.js package](https://www.npmjs.com/package/dynamb-filter) that is typically used with a [barnacles](https://github.com/reelyactive/barnacles) instance and the barnacles-x family of modules which relay __dynamb__ data to specific endpoints.  Together these packages are core components of reelyActive's [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) open source IoT middleware.
 
+See also the __dynamb-filter__'s sister modules, [raddec-filter](https://github.com/reelyactive/raddec-filter) and [spatem-filter](https://github.com/reelyactive/spatem-filter).
+
 
 Hello dynamb-filter!
 --------------------
@@ -60,6 +62,12 @@ Array of deviceIdTypes to accept.  See the [list of identifier types](https://re
 ```javascript
 let acceptedDeviceIdTypes = [ 2, 3 ];
 ```
+
+
+Filter logic
+------------
+
+The __dynamb-filter__ will iterate sequentially through each included filter parameter, and return `false` if _any_ should fail.  If _all_ included filter parameters are passing, the __dynamb-filter__ will return `true`.
 
 
 Contributing
